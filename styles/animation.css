@@ -1,0 +1,30 @@
+.fadeInDown {
+  transform: translate(-0.5rem, -2rem);
+}
+
+.fadeInUp {
+  transform: translateY(10rem);
+}
+
+.fadeInLeft {
+  transform: translateX(10rem);
+}
+
+.fadeOpacity {
+  opacity: 0;
+}
+
+.has_animation {
+  transition: opacity 300ms linear, transform 500ms ease-in-out;
+}
+
+.prefetch {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.has_animation.viewfetch {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+}

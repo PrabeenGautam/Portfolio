@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #e2e8f0;
+  --support-overall: #533aa7;
+}
+
+.light {
+  --bg: var(--background);
+  --btnColor: var(--support-overall);
+  --color: #071e48;
+  --secondaryColor: #4c5d79;
+}
+
+.dark {
+  --bg: #212529;
+  --btnColor: #64ffda;
+  --color: #ccd6f6;
+  --secondaryColor: #636669;
+  --bg_gray: #393e46;
+}
+
+html,
+body {
+  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--color);
+  counter-reset: navlinks;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* Loader */
+.loader {
+  background: var(--bg) url("../assets/gif/opener-loading.gif") no-repeat center
+    center;
+  background-size: 22vw;
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+/* Navigation Header */
+.header {
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/images/background.png") repeat-x;
+  position: relative;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "SFMono", "Fira Sans", sans-serif;
+  font-size: 0.875rem;
+  padding: 20px 2rem;
+}
+
+nav .logo {
+  font-size: 1.75rem;
+  letter-spacing: 0.01rem;
+  font-family: "SFMono", "Fira Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+nav .logo span {
+  cursor: pointer;
+}
+
+nav .logo span:first-child {
+  color: var(--btnColor);
+}
+
+nav .nav_links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav_items {
+  margin-right: 20px;
+  padding: 10px;
+  counter-increment: navlinks;
+}
+
+nav .nav_link,
+a {
+  text-decoration: none;
+  color: var(--color);
+  font-weight: 500;
+}
+
+nav .nav_link::before {
+  content: "0" counter(navlinks) ".";
+  color: var(--btnColor);
+  font-weight: bold;
+}
+
+.nav_items:hover a {
+  color: var(--btnColor);
+  font-weight: bold;
+}
+
+.nav_items.active a {
+  color: var(--btnColor);
+  font-weight: bold;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--btnColor);
+  padding: 5px 10px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.nav-btn {
+  border-radius: 5px 10px;
+}
+
+.btn:hover {
+  background-color: var(--btnColor);
+}
+
+.btn:hover a {
+  color: var(--bg);
+}
+
+/* Details */
+.full-details {
+  padding-top: 12rem;
+  width: calc(100vw - 20rem);
+  margin: 0 auto;
+}
+
+.full-details .background-text {
+  position: absolute;
+  user-select: none;
+  left: 140px;
+  top: 40px;
+
+  font-family: "Poppins", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 15rem;
+  letter-spacing: -0.02em;
+  color: var(--bg_gray);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+#details .name {
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+#details .subtitle {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.bar {
+  border-radius: 4px;
+  background-color: var(--btnColor);
+  margin: 20px 0;
+}
+
+.bar-h {
+  width: 192px;
+  height: 7px;
+}
+
+.follow-container {
+  position: absolute;
+  right: 3rem;
+  top: 11.25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.follow {
+  transform: rotate(90deg);
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.bar-v {
+  height: 192px;
+  width: 7px;
+}
+
+.highlight {
+  color: var(--btnColor);
+}
+
+.btn-check {
+  font-size: 0.875rem;
+  padding: 1.25rem 1.75rem;
+  border-radius: 4px;
+  line-height: 1;
+  margin-top: 3rem;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.icon:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.icon svg {
+  width: 20px;
+}
+
+.image-container {
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  right: 160px;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#background {
+  width: 450px;
+  height: 450px;
+  background-color: var(--btnColor);
+  border-radius: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.image-container .image {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}

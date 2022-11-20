@@ -434,6 +434,9 @@ main {
 
 .tab-content {
   display: none;
+}
+
+.tab-exp {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
@@ -463,7 +466,89 @@ main {
   margin-top: 10px;
 }
 
-.bi {
-  font-size: 2rem;
+.icons .bi {
+  font-size: 2em;
   color: var(--btnColor);
+}
+
+.academics {
+  padding: 25px;
+  border-radius: 8px;
+  background-color: var(--bg_gray);
+}
+
+/* Slider */
+
+/* .slider-container {
+  position: relative;
+} */
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 203px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  transition: 500ms linear;
+}
+
+.slider-btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 4px;
+  background-color: var(--btnColor);
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.slider-btn .bi {
+  color: var(--bg_gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.previous-btn {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.next-btn {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 20;
+  background-color: var(--secondaryColor);
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.dot.active {
+  background-color: var(--btnColor);
+  opacity: 1;
+}
+
+.dot:hover {
+  opacity: 1;
 }

@@ -13,13 +13,13 @@ const animationCallback = (entries) => {
       entry.target.classList.add("viewfetch");
       entry.target.matches(".prefetch") &&
         entry.target.classList.remove("prefetch");
-      animationObserver.unobserveElement(entry.target);
+      // animationObserver.unobserveElement(entry.target);
     }
   });
 };
 
 const animationObserver = new ObserverCreator(animationRef, animationCallback, {
-  threshold: 0.5,
+  threshold: 0.15,
   root: null,
 });
 

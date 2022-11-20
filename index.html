@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animation.css" />
     <link rel="stylesheet" href="./styles/icon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css"
+      crossorigin="anonymous" />
+
     <script defer src="./js/script.js"></script>
     <script defer src="./js/IntersectionObserver.js"></script>
     <script defer src="./js/animation.js"></script>
@@ -21,25 +26,31 @@
           <a href="index.html"><span>Prabin</span><span>Gautam</span></a>
         </div>
         <ul class="nav_links">
-          <li class="has_animation nav_items fadeInDown active" data-delay="0">
+          <li class="has_animation nav_items fadeInDown" data-delay="0">
             <a href="#about" class="nav_link"> About </a>
           </li>
 
           <li class="has_animation nav_items fadeInDown" data-delay="0.1">
-            <a href="#about" class="nav_link"> Projects </a>
+            <a href="#skills" class="nav_link"> Skills </a>
           </li>
 
           <li class="has_animation nav_items fadeInDown" data-delay="0.2">
-            <a href="#about" class="nav_link"> Contact </a>
+            <a href="#projects" class="nav_link"> Projects </a>
           </li>
-          <div class="has_animation btn nav-btn fadeInDown" data-delay="0.3">
+
+          <li class="has_animation nav_items fadeInDown" data-delay="0.3">
+            <a href="#contact" class="nav_link"> Contact </a>
+          </li>
+          <div class="has_animation btn nav-btn fadeInDown" data-delay="0.4">
             <a href="./assets/resume.pdf">Resume</a>
           </div>
         </ul>
       </nav>
 
       <section class="full-details">
-        <div class="background-text">Hello</div>
+        <div class="has_animation fadeInUp fadeOpacity background-text">
+          Hello
+        </div>
         <section
           id="details"
           class="has_animation fadeOpacity"
@@ -56,7 +67,10 @@
       <section class="image-container has_animation fadeInUp" data-delay="0.1">
         <div id="background"></div>
         <div class="image">
-          <img src="./assets/images/full-show.png" alt="" />
+          <img
+            src="./assets/images/full-show.png"
+            alt="prabin"
+            class="featured-photo" />
         </div>
       </section>
 
@@ -68,7 +82,10 @@
         <div class="icons">
           <div class="icon facebook">
             <a href="https://www.facebook.com/prabingautam122/">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+                style="width: 18px; height: 18px; vertical-align: middle">
                 <path
                   style="fill: white"
                   d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg
@@ -76,7 +93,10 @@
           </div>
           <div class="icon instagram">
             <a href="https://www.instagram.com/_prabingautam/">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                style="width: 18px; height: 18px; vertical-align: middle">
                 <path
                   style="fill: white"
                   d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" /></svg
@@ -84,24 +104,24 @@
           </div>
           <div class="icon linkedin">
             <a href="https://www.linkedin.com/in/prabeengautam/">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                style="width: 18px; height: 18px; vertical-align: middle">
                 <path
                   style="fill: white"
                   d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
               </svg>
             </a>
           </div>
-
           <div class="icon youtube">
             <a href="https://www.youtube.com/@AndrawareGeeks">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
                 fill="currentColor"
-                class="bi bi-youtube"
-                viewBox="0 0 16 16">
+                style="width: 18px; height: 18px; vertical-align: middle">
                 <path
+                  style="fill: white"
                   d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
               </svg>
             </a>
@@ -110,17 +130,123 @@
       </section>
     </header>
 
-    <section>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel corrupti
-      repudiandae, repellendus dolores quis delectus harum nisi aliquid
-      perspiciatis aspernatur accusamus iure necessitatibus id a in sunt
-      voluptates libero fuga! Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Obcaecati, omnis cum exercitationem totam assumenda
-      eligendi fuga est culpa accusamus odio eaque. Ratione rem, assumenda
-      asperiores id obcaecati nam animi beatae. Lorem ipsum, dolor sit amet
-      consectetur adipisicing elit. Distinctio, voluptatem! Voluptatibus
-      deleniti veniam sunt? Sequi earum voluptatibus ducimus ad quibusdam ullam
-      nam provident, expedita consectetur pariatur ex quisquam incidunt quam.
-    </section>
+    <main>
+      <section id="about" class="section-counter has_animation fadeInUp">
+        <div class="heading">
+          <div class="header-title">About Me</div>
+          <div class="line"></div>
+        </div>
+        <div class="content-section">
+          <div class="images">
+            <img src="./assets/images/front.jpg" alt="profile picture" />
+          </div>
+          <div class="content">
+            <p>
+              Hello! Prabin Gautam here. I enjoy creating games and building
+              websites. I adore the internet and value everything that it can
+              do. My interest in web development arises in 2016.
+            </p>
+            <p>
+              I'm passionate about making products that others can utilize and I
+              adore programming. I enjoy learning a lot, and I'm constantly
+              looking for ways to develop my abilities and knowledge. I am a
+              student of computer engineering. I enjoy coding in my free time
+              and tinkering with new technologies.
+            </p>
+            <p class="contact-info">
+              I'm constantly looking for new projects to learn, so feel free to
+              reach out! Please feel free to get in touch if you have any
+              questions or comments because I'm always ready for a new
+              challenge. If you want to get in touch, please do so!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-counter">
+        <div class="skills-section">
+          <div class="heading">
+            <div class="header-title">Skills and Experience</div>
+          </div>
+          <div class="content-section">
+            Here are a few technologies I’ve been working or familiar with.
+            <ul class="skill-list">
+              <li>Html</li>
+              <li>CSS</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React</li>
+              <li>Unity</li>
+              <li>Unreal Engine</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experiences-section">
+          <div class="toggle-buttons">
+            <div id="experience" class="tabs tab-0" data-tab="0">
+              Experience
+            </div>
+            <div id="education" class="tabs tab-1 tab-active" data-tab="1">
+              Education
+            </div>
+          </div>
+          <div class="tab-contents content-section">
+            <div class="tab-content tab-content-0">
+              <div>
+                <div class="about">IT Workshop (1 day)</div>
+                <div class="time">2015</div>
+                <div class="company">Informatics</div>
+              </div>
+              <div>
+                <div class="about">Self Learning</div>
+                <div class="time">2015 - Present</div>
+                <!-- <div class="company"></div> -->
+              </div>
+              <div style="grid-column: span 2">
+                <div class="about">Help me get an experience (●'◡'●)</div>
+              </div>
+            </div>
+            <div class="tab-content tab-content-1 tab-content-active">
+              <div class="academics">
+                <div class="icons">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="institution">Pashchimanchal Campus, Pokhara</div>
+                <div class="study">Bachelors in Computer Engineering</div>
+                <div class="time">2018 - Present</div>
+              </div>
+
+              <div class="academics">
+                <div class="icons">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="institution">
+                  Sainik Awasiya Mahavidyalaya Pokhara
+                </div>
+                <div class="study">+2</div>
+                <div class="time">2016 - 2018</div>
+              </div>
+
+              <div class="academics">
+                <div class="icons">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="institution">
+                  BhairabKali Higher Secondary School
+                </div>
+                <div class="study">SLC</div>
+                <div class="time">2005 - 2016</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-counter">
+        <div class="heading">
+          <div class="header-title">My Works</div>
+          <div class="line"></div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

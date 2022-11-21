@@ -20,7 +20,8 @@
   --btnColor: #64ffda;
   --color: #ccd6f6;
   --secondaryColor: #636669;
-  --stateColor: #636669;
+  /* --stateColor: #636669; */
+  --stateColor: black;
   --bg_gray: #393e46;
   --secondaryTextColor: #d7b94c;
   --textGray: #8892b0;
@@ -41,6 +42,7 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
 }
 
 img {
@@ -83,16 +85,17 @@ img {
   mix-blend-mode: luminosity;
 }
 
-nav {
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "SFMono", "Fira Sans", sans-serif;
   font-size: 0.875rem;
   padding: 20px 2rem;
+  z-index: 20;
 }
 
-nav .logo {
+.nav-container .logo {
   font-size: 1.75rem;
   letter-spacing: 0.01rem;
   font-family: "SFMono", "Fira Sans", sans-serif;
@@ -102,15 +105,15 @@ nav .logo {
   z-index: 2;
 }
 
-nav .logo span {
+.nav-container .logo span {
   cursor: pointer;
 }
 
-nav .logo span:first-child {
+.nav-container .logo span:first-child {
   color: var(--btnColor);
 }
 
-nav .nav_links {
+.nav-container .nav_links {
   display: flex;
   list-style-type: none;
 }
@@ -121,14 +124,14 @@ nav .nav_links {
   counter-increment: navlinks;
 }
 
-nav .nav_link,
+.nav-container .nav_link,
 a {
   text-decoration: none;
-  color: var(--color);
+  color: inherit;
   font-weight: 500;
 }
 
-nav .nav_link::before {
+.nav-container .nav_link::before {
   content: "0" counter(navlinks) ".";
   color: var(--btnColor);
   font-weight: bold;
@@ -462,7 +465,7 @@ main {
 
 .tab-content .time {
   color: var(--btnColor);
-  margin-top: 10px;
+  margin: 10px 0 7px;
 }
 
 .tab-content .study {
@@ -483,23 +486,12 @@ main {
 }
 
 /* Slider */
-.slider-container {
-  position: relative;
-}
 
 .swiper {
   position: relative;
   width: 100%;
   height: 203px;
   cursor: grab;
-}
-
-.slider-btn .bi {
-  color: var(--stateColor);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 .slide-pagination {
@@ -525,4 +517,146 @@ main {
   opacity: 1;
   background: var(--btnColor);
   width: 30px;
+}
+
+.customIcons {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 20;
+  cursor: pointer;
+  user-select: none;
+  transition: 500ms ease-in;
+}
+
+.scroll-up {
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--btnColor);
+  transform: translate(7rem);
+}
+
+.scroll-up.show {
+  transform: translate(0);
+}
+
+.scroll-up svg,
+.theme-switcher svg {
+  width: 25px;
+  height: 25px;
+  color: var(--stateColor);
+}
+
+.theme-switcher {
+  bottom: 20px;
+  left: 20px;
+}
+
+.light .theme-switcher {
+  background-color: var(--secondaryColor);
+}
+
+.dark .theme-switcher {
+  background-color: var(--color);
+}
+
+.side-nav {
+  position: fixed;
+  top: calc(50% - 14rem);
+  transform: translateX(-7rem);
+  left: 15px;
+  background-color: var(--btnColor);
+  color: var(--stateColor);
+  border-radius: 8px;
+  height: 28rem;
+  z-index: 20;
+  transition: transform 500ms ease-in;
+}
+
+.side-nav.show {
+  transform: translate(0);
+}
+
+.side-nav ul {
+  position: relative;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.side-nav li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+}
+
+.light .side-nav li.active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark .side-nav li.active {
+  background-color: var(--color);
+}
+
+/* .side-nav li.active::before {
+  content: "";
+  width: 20px;
+  height: 100%;
+  background-color: var(--bg);
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 0%);
+}
+
+.side-nav li.active::after {
+  content: "";
+  width: 20px;
+  height: 100%;
+  background-color: var(--bg);
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  transform: translateX(50%);
+  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%, 0% 0%);
+} */
+
+.side-nav .nav-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-nav .nav-icons svg {
+  width: 30px;
+  height: 30px;
+}
+
+.side-nav .nav-name {
+  position: absolute;
+  color: var(--stateColor);
+  font-weight: bold;
+  background-color: var(--btnColor);
+  padding: 15px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(2.5rem);
+  transition: opacity 500ms ease-in-out;
+}
+
+.side-nav li:hover .nav-name {
+  opacity: 1;
 }

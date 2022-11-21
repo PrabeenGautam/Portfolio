@@ -15,17 +15,19 @@ class ObserverCreator {
   }
 
   observeElement() {
-    this.elements &&
-      this.elements.forEach((element) => {
-        this.observer.observe(element);
-      });
+    this.elements && this.elements.length > 1
+      ? this.elements.forEach((element) => {
+          this.observer.observe(element);
+        })
+      : this.observer.observe(this.elements);
   }
 
   unobserveElement() {
-    this.elements &&
-      this.elements.forEach((element) => {
-        this.observer.unobserve(element);
-      });
+    this.elements && this.elements.length > 1
+      ? this.elements.forEach((element) => {
+          this.observer.unobserve(element);
+        })
+      : this.observer.unobserve(this.elements);
   }
 }
 
@@ -84,25 +86,6 @@ const prevBtn = document.querySelector(".previous-btn");
 const nextBtn = document.querySelector(".next-btn");
 const dots = document.querySelector(".dots");
 
-const sliderAcademics = new SliderCreator(slides, dots);
-// sliderAcademics.dotCreator();
-// sliderAcademics.goToSlide();
-
-// nextBtn.addEventListener("click", function (e) {
-//   sliderAcademics.nextSlide();
-// });
-
-// prevBtn.addEventListener("click", function (e) {
-//   sliderAcademics.prevSlide();
-// });
-
-// dots.addEventListener("click", function (e) {
-//   if (!e.target.closest(".dot")) return;
-//   const index = +e.target.dataset.dot;
-//   sliderAcademics.CurrentSlide = index;
-//   sliderAcademics.goToSlide();
-// });
-
 const swiper = new Swiper(".swiper", {
   spaceBetween: 30,
   // effect: "fade",
@@ -110,6 +93,7 @@ const swiper = new Swiper(".swiper", {
   mousewheel: {
     invert: false,
   },
+
   pagination: {
     el: ".slide-pagination",
     clickable: true,

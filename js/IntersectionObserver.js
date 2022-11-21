@@ -50,13 +50,6 @@ class SliderCreator {
     this.dotElement.insertAdjacentHTML("afterbegin", html);
   }
 
-  dotUpdate() {
-    const dotSlide = document.querySelectorAll(".dot");
-    const element = dotSlide[this.currentSlide];
-    dotSlide.forEach((dot) => dot.classList.remove("active"));
-    element.classList.add("active");
-  }
-
   goToSlide() {
     this.element.forEach(
       (slide, index) =>
@@ -64,7 +57,11 @@ class SliderCreator {
           (index - this.currentSlide) * 100
         }%)`)
     );
-    this.dotUpdate(this.currentSlide);
+
+    const dotSlide = document.querySelectorAll(".dot");
+    const element = dotSlide[this.currentSlide];
+    dotSlide.forEach((dot) => dot.classList.remove("active"));
+    element.classList.add("active");
   }
 
   prevSlide() {
@@ -81,26 +78,40 @@ class SliderCreator {
 }
 
 /* Scripts */
+const sliderContainer = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 const prevBtn = document.querySelector(".previous-btn");
 const nextBtn = document.querySelector(".next-btn");
 const dots = document.querySelector(".dots");
 
 const sliderAcademics = new SliderCreator(slides, dots);
-sliderAcademics.dotCreator();
-sliderAcademics.goToSlide();
+// sliderAcademics.dotCreator();
+// sliderAcademics.goToSlide();
 
-nextBtn.addEventListener("click", function (e) {
-  sliderAcademics.nextSlide();
-});
+// nextBtn.addEventListener("click", function (e) {
+//   sliderAcademics.nextSlide();
+// });
 
-prevBtn.addEventListener("click", function (e) {
-  sliderAcademics.prevSlide();
-});
+// prevBtn.addEventListener("click", function (e) {
+//   sliderAcademics.prevSlide();
+// });
 
-dots.addEventListener("click", function (e) {
-  if (!e.target.closest(".dot")) return;
-  const index = +e.target.dataset.dot;
-  sliderAcademics.CurrentSlide = index;
-  sliderAcademics.goToSlide();
+// dots.addEventListener("click", function (e) {
+//   if (!e.target.closest(".dot")) return;
+//   const index = +e.target.dataset.dot;
+//   sliderAcademics.CurrentSlide = index;
+//   sliderAcademics.goToSlide();
+// });
+
+const swiper = new Swiper(".swiper", {
+  spaceBetween: 30,
+  // effect: "fade",
+  loop: true,
+  mousewheel: {
+    invert: false,
+  },
+  pagination: {
+    el: ".slide-pagination",
+    clickable: true,
+  },
 });

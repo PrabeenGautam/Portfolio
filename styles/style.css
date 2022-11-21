@@ -674,13 +674,17 @@ main {
 .filter-group .filter-list {
   padding-bottom: 5px;
   cursor: pointer;
-  transition: color 400ms ease-in, border-color 300ms ease-in;
+  transition: border-color 300ms ease-in;
 }
 
 .filter-group .filter-list.active,
 .filter-list:hover {
   color: var(--btnColor);
   border-bottom: 2px solid var(--btnColor);
+}
+
+.filter-group .filter-list.active {
+  font-weight: 700;
 }
 
 .grid {
@@ -730,6 +734,10 @@ main {
   margin-bottom: 20px;
 }
 
+.project-title a {
+  font-weight: 700;
+}
+
 .project-item a:hover,
 .project-item a:hover svg {
   color: var(--btnColor);
@@ -745,6 +753,7 @@ main {
   font-size: 0.85rem;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   text-transform: capitalize;
 }

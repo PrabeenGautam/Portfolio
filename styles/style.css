@@ -13,6 +13,7 @@
   --secondaryColor: #4c5d79;
   --stateColor: white;
   --bg_gray: rgba(0, 0, 0, 0.05);
+  --secondaryTextColor: white;
 }
 
 .dark {
@@ -23,7 +24,7 @@
   /* --stateColor: #636669; */
   --stateColor: black;
   --bg_gray: #393e46;
-  --secondaryTextColor: #d7b94c;
+  --secondaryTextColor: rgba(0, 0, 0, 0.2);
   --textGray: #8892b0;
 }
 
@@ -687,10 +688,63 @@ main {
 }
 
 .project-item {
-  background-color: #fff;
+  background: var(--bg_gray);
   padding: 20px;
   margin: 10px;
   color: black;
   width: calc(33% - 20px);
   display: inline-block;
+  border-radius: 8px;
+}
+
+.project-item .files {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.project-item svg {
+  width: 25px;
+  height: 25px;
+  color: var(--color);
+}
+
+.project-item .folder svg {
+  width: 40px;
+  height: 40px;
+  color: var(--btnColor);
+}
+
+.project-item .links {
+  display: flex;
+  gap: 20px;
+}
+
+.project-content {
+  color: var(--color);
+}
+
+.project-content .project-title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.project-item a:hover,
+.project-item a:hover svg {
+  color: var(--btnColor);
+}
+
+.project-content .project-subtitle {
+  font-size: 0.9375rem;
+  margin-bottom: 20px;
+}
+
+.project-content .technologies {
+  font-family: "SFMono", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.85rem;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  text-transform: capitalize;
 }

@@ -1,6 +1,9 @@
 var iso = new Isotope(".grid", {
   itemSelector: ".project-item",
-  layoutMode: "fitRows",
+  percentPosition: true,
+  masonry: {
+    columnWidth: ".project-item",
+  },
 });
 
 // filter functions

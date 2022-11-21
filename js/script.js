@@ -4,6 +4,7 @@ const tabsContent = document.querySelectorAll(".tab-content");
 const scrollUp = document.querySelector(".scroll-up");
 const themeSwitcher = document.querySelector(".theme-switcher");
 const headerSections = document.querySelector(".header");
+const projectItems = document.querySelectorAll(".project-item");
 
 toggleButtons.addEventListener("click", function (e) {
   if (!e.target.closest(".tabs")) return;
@@ -80,3 +81,18 @@ themeSwitcher.addEventListener("click", function (e) {
     return;
   }
 });
+
+function projectCallback(entries) {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle("hidden", !entry.isIntersecting);
+  });
+}
+
+projectItems.forEach((project) => project.classList.add("hidden"));
+
+const projectLoader = new ObserverCreator(projectItems, projectCallback, {
+  threshold: 0.2,
+  // rootMargin: "10px",
+});
+projectLoader.createObserver();
+projectLoader.observeElement();

@@ -304,6 +304,7 @@ a {
   object-position: top;
   pointer-events: none;
   user-select: none;
+  filter: grayscale(1);
 }
 
 /* Main Container */
@@ -322,6 +323,9 @@ main {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.heading.space {
+  justify-content: space-between;
 }
 
 .section-counter .header-title {
@@ -607,14 +611,14 @@ main {
   background-color: var(--color);
 }
 
-/* .side-nav li.active::before {
+.side-nav li.active::before {
   content: "";
   width: 20px;
   height: 100%;
   background-color: var(--bg);
   position: absolute;
   left: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   transform: translateX(-50%);
   clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 0%);
 }
@@ -626,10 +630,10 @@ main {
   background-color: var(--bg);
   position: absolute;
   right: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   transform: translateX(50%);
   clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%, 0% 0%);
-} */
+}
 
 .side-nav .nav-icons {
   display: flex;
@@ -659,4 +663,34 @@ main {
 
 .side-nav li:hover .nav-name {
   opacity: 1;
+}
+
+.filter-group {
+  display: flex;
+  gap: 30px;
+}
+
+.filter-group .filter-list {
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: color 400ms ease-in, border-color 300ms ease-in;
+}
+
+.filter-group .filter-list.active,
+.filter-list:hover {
+  color: var(--btnColor);
+  border-bottom: 2px solid var(--btnColor);
+}
+
+.grid {
+  width: 100%;
+}
+
+.project-item {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  color: black;
+  width: calc(33% - 20px);
+  display: inline-block;
 }

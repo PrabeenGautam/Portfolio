@@ -8,24 +8,24 @@ const projectItems = document.querySelectorAll(".project-item");
 
 const navContainer = document.querySelector(".nav_links");
 
-navContainer.addEventListener("click", function (e) {
-  e.preventDefault();
-  const element = e.target.closest(".nav_items");
-  if (!element) return;
-  const href = element.querySelector("a").getAttribute("href");
+// navContainer.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const element = e.target.closest(".nav_items");
+//   if (!element) return;
+//   const href = element.querySelector("a").getAttribute("href");
 
-  const section = document.querySelector(href);
-  console.log(section);
+//   const section = document.querySelector(href);
+//   console.log(section);
 
-  const coords = section.getBoundingClientRect();
-  const { left, top } = coords;
+//   const coords = section.getBoundingClientRect();
+//   const { left, top } = coords;
 
-  window.scrollTo({
-    left: left + window.pageXOffset - 50,
-    top: top + window.pageYOffset - 50,
-    behavior: "smooth",
-  });
-});
+//   window.scrollTo({
+//     left: left + window.pageXOffset - 50,
+//     top: top + window.pageYOffset - 50,
+//     behavior: "smooth",
+//   });
+// });
 
 toggleButtons &&
   toggleButtons.addEventListener("click", function (e) {

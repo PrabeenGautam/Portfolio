@@ -32,6 +32,6 @@ window.addEventListener("load", function () {
       animationObserver.createObserver();
       animationObserver.observeElement();
     },
-    element ? 2500 : 200
+    element ? 2400 : 200
   );
 });

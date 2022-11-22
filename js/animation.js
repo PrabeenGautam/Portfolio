@@ -18,12 +18,13 @@ const animationCallback = (entries) => {
 };
 
 const animationObserver = new ObserverCreator(animationRef, animationCallback, {
-  threshold: 0.15,
+  threshold: 0.1,
   root: null,
 });
 
 const element = document.querySelector(".loader");
 window.addEventListener("load", function () {
+  window.scrollTo(0, 0);
   setTimeout(
     () => {
       element && element.classList.add("hidden");

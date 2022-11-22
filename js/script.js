@@ -6,6 +6,27 @@ const themeSwitcher = document.querySelector(".theme-switcher");
 const headerSections = document.querySelector(".header");
 const projectItems = document.querySelectorAll(".project-item");
 
+const navContainer = document.querySelector(".nav_links");
+
+navContainer.addEventListener("click", function (e) {
+  e.preventDefault();
+  const element = e.target.closest(".nav_items");
+  if (!element) return;
+  const href = element.querySelector("a").getAttribute("href");
+
+  const section = document.querySelector(href);
+  console.log(section);
+
+  const coords = section.getBoundingClientRect();
+  const { left, top } = coords;
+
+  window.scrollTo({
+    left: left + window.pageXOffset - 50,
+    top: top + window.pageYOffset - 50,
+    behavior: "smooth",
+  });
+});
+
 toggleButtons &&
   toggleButtons.addEventListener("click", function (e) {
     if (!e.target.closest(".tabs")) return;
@@ -87,17 +108,3 @@ themeSwitcher.addEventListener("click", function (e) {
     return;
   }
 });
-
-function projectCallback(entries) {
-  entries.forEach((entry) => {
-    entry.target.classList.toggle("hidden", !entry.isIntersecting);
-  });
-}
-
-projectItems.forEach((project) => project.classList.add("hidden"));
-
-const projectLoader = new ObserverCreator(projectItems, projectCallback, {
-  threshold: 0.1,
-});
-projectLoader.createObserver();
-projectLoader.observeElement();

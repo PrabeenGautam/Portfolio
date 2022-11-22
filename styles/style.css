@@ -45,6 +45,19 @@ body {
   transition: background 500ms ease-in-out, color 500ms ease-in-out;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg_gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+}
+
 img {
   display: block;
   width: 100%;
@@ -175,6 +188,7 @@ a {
 
 .btn:hover {
   background-color: var(--btnColor);
+  color: var(--bg);
 }
 
 .btn:hover a {
@@ -341,9 +355,10 @@ main {
   justify-content: space-between;
 }
 
-.section-counter .header-title {
+.section-counter .header-title,
+#contact .topic {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   font-family: "Poppins", sans-serif;
 
   display: flex;
@@ -389,10 +404,12 @@ main {
   border-radius: 8px;
 }
 
-.content-section .content p {
+.content-section .content p,
+#contact .contact-description {
   font-size: 1.1rem;
   margin-bottom: 0.9375rem;
   color: var(--textGray);
+  line-height: 1.7;
 }
 
 .content-section .images:hover {
@@ -871,20 +888,66 @@ main {
   margin-top: 20px;
 }
 
-.more-btn {
-  display: flex;
-  justify-content: center;
+.btn-more {
+  width: fit-content;
+  margin: 0 auto;
   margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 9px;
 }
 
-.more-btn .btn {
+.btn-more .btn {
   background-color: var(--btnColor);
   color: var(--stateColor);
   border-radius: 9px;
   padding: 10px 20px;
 }
 
-.more-btn .btn:hover {
+.btn-more .btn:hover {
   color: var(--btnColor);
   background-color: var(--stateColor);
+}
+
+#contact {
+  max-width: 40rem;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 150px 0;
+}
+
+#contact .heading {
+  flex-direction: column;
+}
+
+#contact .header-title {
+  font-size: 1rem;
+  color: var(--btnColor);
+  font-weight: 400;
+}
+
+#contact .topic {
+  font-size: 3rem;
+}
+
+#contact .header-title::before {
+  font-size: 0.875rem;
+}
+
+#contact .content-section {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .contact-description {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.built {
+  text-align: center;
 }

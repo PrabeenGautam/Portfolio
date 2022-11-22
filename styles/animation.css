@@ -14,12 +14,20 @@
   transform: translateX(10rem);
 }
 
+.fadeInRight {
+  transform: translateX(-10rem);
+}
+
 .fadeOpacity {
   opacity: 0;
 }
 
 .has_animation {
   transition: opacity 300ms linear, transform 500ms ease-in-out;
+}
+
+.project-item.has_animation {
+  transition: opacity 500ms linear;
 }
 
 .prefetch {

@@ -190,22 +190,10 @@ const folderSVG = `<svg
                       d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z" />
                   </svg>`;
 
-const previewSVG = ` <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-box-arrow-up-right"
-                        viewBox="0 0 16 16">
-                        <path
-                          fill-rule="evenodd"
-                          d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                        />
-                      </svg>`;
+const previewSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+</svg>`;
 
 projectContainer && projectInserter(projectContainer, projectFiltered);
 projectArchieve && projectInserter(projectArchieve, projectArray);
@@ -213,7 +201,7 @@ projectArchieve && projectInserter(projectArchieve, projectArray);
 function projectInserter(element, projectShow) {
   projectShow.forEach((project) => {
     const html = `
-  <div class="project-item ${project.filter}">
+  <div class="project-item ${project.filter} has_animation">
               <div class="files">
                 <div class="folder">${folderSVG}</div>
                 <div class="links">
@@ -263,8 +251,11 @@ const featuredProjects = projectArray.filter(
 );
 
 projectFeatured &&
-  featuredProjects.forEach((project) => {
-    const html = ` <div class="project-container">
+  featuredProjects.forEach((project, index) => {
+    const even = index % 2 === 0;
+    const html = ` <div class="project-container has_animation ${
+      even ? "fadeInLeft" : "fadeInRight"
+    }">
             <div class="project-image">
               <img
                 src=${

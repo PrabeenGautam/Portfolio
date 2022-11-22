@@ -55,15 +55,15 @@ img {
 
 /* Loader */
 .loader {
-  background: #e2e8f0 url("../assets/gif/opener-loading.gif") no-repeat center
-    center;
-  background-size: 22vw;
   width: 100vw;
   height: 100vh;
-
+  background-color: var(--bg);
+  color: var(--btnColor);
   position: fixed;
-  top: 0;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden {
@@ -709,8 +709,8 @@ main {
 }
 
 .project-item svg {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   color: var(--color);
 }
 

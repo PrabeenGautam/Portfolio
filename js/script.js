@@ -91,8 +91,7 @@ function projectCallback(entries) {
 projectItems.forEach((project) => project.classList.add("hidden"));
 
 const projectLoader = new ObserverCreator(projectItems, projectCallback, {
-  threshold: 0.2,
-  // rootMargin: "10px",
+  threshold: 0.15,
 });
 projectLoader.createObserver();
 projectLoader.observeElement();

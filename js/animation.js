@@ -30,5 +30,5 @@ window.addEventListener("load", function () {
     this.document.body.style.overflow = "auto";
     animationObserver.createObserver();
     animationObserver.observeElement();
-  }, 500);
+  }, 2500);
 });

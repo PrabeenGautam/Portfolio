@@ -21,7 +21,6 @@
   --btnColor: #64ffda;
   --color: #ccd6f6;
   --secondaryColor: #636669;
-  /* --stateColor: #636669; */
   --stateColor: black;
   --bg_gray: #393e46;
   --secondaryTextColor: rgba(0, 0, 0, 0.2);
@@ -41,7 +40,7 @@ body {
 
 body {
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
   overflow: hidden;
   transition: background 500ms ease-in-out, color 500ms ease-in-out;
 }
@@ -51,6 +50,7 @@ img {
   width: 100%;
   pointer-events: none;
   user-select: none;
+  border-radius: inherit;
 }
 
 /* Loader */
@@ -69,6 +69,18 @@ img {
 .hidden {
   opacity: 0;
   display: none;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.light .sticky {
+  background-color: #d6dce4;
 }
 
 /* Navigation Header */
@@ -708,7 +720,8 @@ main {
   margin-bottom: 20px;
 }
 
-.project-item svg {
+.project-item svg,
+.project-container svg {
   width: 22px;
   height: 22px;
   color: var(--color);
@@ -720,7 +733,8 @@ main {
   color: var(--btnColor);
 }
 
-.project-item .links {
+.project-item .links,
+.project-container .links {
   display: flex;
   gap: 20px;
 }
@@ -729,9 +743,11 @@ main {
   color: var(--color);
 }
 
-.project-content .project-title {
+.project-content .project-title,
+.project-container .project-name {
   font-size: 1.25rem;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .project-title a {
@@ -739,16 +755,20 @@ main {
 }
 
 .project-item a:hover,
-.project-item a:hover svg {
+.project-item a:hover svg,
+.project-container a:hover,
+.project-container a:hover svg {
   color: var(--btnColor);
 }
 
-.project-content .project-subtitle {
+.project-content .project-subtitle,
+.project-container .project-description {
   font-size: 0.9375rem;
   margin-bottom: 20px;
 }
 
-.project-content .technologies {
+.technologies,
+.project-container .title {
   font-family: "SFMono", Calibri, "Trebuchet MS", sans-serif;
   font-size: 0.85rem;
   list-style: none;
@@ -756,4 +776,115 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   text-transform: capitalize;
+}
+
+.project-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.project-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.project-container:nth-child(odd) {
+  flex-direction: row;
+}
+
+.project-container:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project-container .project-image {
+  width: 100rem;
+  position: relative;
+  cursor: pointer;
+
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-right: 0;
+  border-left: 4px solid var(--btnColor);
+  opacity: 0.7;
+  transition: opacity 300ms ease-in-out;
+}
+
+.project-container:nth-child(even) .project-image {
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-left: 0;
+  border-right: 4px solid var(--btnColor);
+}
+
+.project-container .project-image:hover {
+  opacity: 1;
+}
+
+.project-container .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-container .project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.project-container:nth-child(even) .project-details {
+  align-items: flex-start;
+}
+
+.project-container .title {
+  color: var(--btnColor);
+  margin: 10px 0;
+}
+
+.project-container .project-description {
+  box-shadow: 0 5px 5px var(--secondaryColor);
+  position: relative;
+  padding: 35px 25px;
+  border-radius: 4px;
+  background-color: var(--bg_gray);
+  color: var(--color);
+  transform-origin: 100% 50%;
+  width: 120%;
+  z-index: 20;
+}
+
+.project-container:nth-child(odd) .project-description {
+  text-align: right;
+}
+
+.light .project-container .project-description {
+  background-color: #d6dce4;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+  /* color: #ccd6f6; */
+}
+
+.project-container .links {
+  margin-top: 20px;
+}
+
+.more-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.more-btn .btn {
+  background-color: var(--btnColor);
+  color: var(--stateColor);
+  border-radius: 9px;
+  padding: 10px 20px;
+}
+
+.more-btn .btn:hover {
+  color: var(--btnColor);
+  background-color: var(--stateColor);
 }

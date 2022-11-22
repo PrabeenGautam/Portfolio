@@ -6,31 +6,37 @@ const themeSwitcher = document.querySelector(".theme-switcher");
 const headerSections = document.querySelector(".header");
 const projectItems = document.querySelectorAll(".project-item");
 
-toggleButtons.addEventListener("click", function (e) {
-  if (!e.target.closest(".tabs")) return;
-  tabsButton.forEach((tab) => tab.classList.remove("tab-active"));
-  tabsContent.forEach((tab) => tab.classList.remove("tab-content-active"));
+toggleButtons &&
+  toggleButtons.addEventListener("click", function (e) {
+    if (!e.target.closest(".tabs")) return;
+    tabsButton.forEach((tab) => tab.classList.remove("tab-active"));
+    tabsContent.forEach((tab) => tab.classList.remove("tab-content-active"));
 
-  e.target.classList.add("tab-active");
+    e.target.classList.add("tab-active");
 
-  document
-    .querySelector(`.tab-content-${e.target.dataset.tab}`)
-    .classList.add("tab-content-active");
+    document
+      .querySelector(`.tab-content-${e.target.dataset.tab}`)
+      .classList.add("tab-content-active");
+  });
+if (headerSections) {
+  const headerObserver = new ObserverCreator(
+    headerSections,
+    (entries) => {
+      entries.forEach((entry) => {
+        scrollUp.classList.toggle("show", !entry.isIntersecting);
+      });
+    },
+    {
+      threshold: 0.45,
+    }
+  );
+  headerObserver.createObserver();
+  headerObserver.observeElement();
+}
+
+window.addEventListener("scroll", function (e) {
+  scrollUp.classList.toggle("show", window.scrollY > 60);
 });
-
-const headerObserver = new ObserverCreator(
-  headerSections,
-  (entries) => {
-    entries.forEach((entry) => {
-      scrollUp.classList.toggle("show", !entry.isIntersecting);
-    });
-  },
-  {
-    threshold: 0.45,
-  }
-);
-headerObserver.createObserver();
-headerObserver.observeElement();
 
 scrollUp.addEventListener("click", function (e) {
   window.scrollTo(0, 0);
@@ -91,7 +97,7 @@ function projectCallback(entries) {
 projectItems.forEach((project) => project.classList.add("hidden"));
 
 const projectLoader = new ObserverCreator(projectItems, projectCallback, {
-  threshold: 0.15,
+  threshold: 0.1,
 });
 projectLoader.createObserver();
 projectLoader.observeElement();

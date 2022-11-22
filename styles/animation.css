@@ -38,14 +38,14 @@
   color: var(--color);
   width: 0;
   white-space: nowrap;
-  animation: typing 4s steps(26) 4000ms forwards, cursor 1s infinite 4000ms;
+  animation: typing 4s steps(26) 3200ms forwards, cursor 1s infinite 3200ms;
   overflow: hidden;
   border-right: 3px solid var(--btnColor);
 }
 
 .wrapper {
   width: max-content;
-  max-width: 120px;
+  max-width: 110px;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 1;
 }
@@ -57,14 +57,17 @@
   margin: 0 auto;
   fill: none;
   user-select: none;
-  font-family: sans-serif;
-  stroke-width: 3px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 .wrapper #logo path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 1500ms var(--easeInOutQuart) 0.3s forwards;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .wrapper #logo #logo_name {
@@ -73,7 +76,7 @@
 }
 
 .wrapper #logo {
-  animation: text 300ms var(--easeInOutQuart) 2.3s forwards;
+  animation: close 300ms var(--easeInOutQuart) 2.3s forwards;
 }
 
 @keyframes dash {
@@ -88,11 +91,9 @@
   }
 }
 
-@keyframes text {
+@keyframes close {
   to {
-    opacity: 1;
     transform: scale(0.1);
-    z-index: -1;
   }
 }
 

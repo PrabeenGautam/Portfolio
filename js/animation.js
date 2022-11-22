@@ -13,7 +13,6 @@ const animationCallback = (entries) => {
       entry.target.classList.add("viewfetch");
       entry.target.matches(".prefetch") &&
         entry.target.classList.remove("prefetch");
-      // animationObserver.unobserveElement(entry.target);
     }
   });
 };
@@ -23,12 +22,15 @@ const animationObserver = new ObserverCreator(animationRef, animationCallback, {
   root: null,
 });
 
+const element = document.querySelector(".loader");
 window.addEventListener("load", function () {
-  setTimeout(() => {
-    const element = this.document.querySelector(".loader");
-    element && element.classList.add("hidden");
-    this.document.body.style.overflow = "auto";
-    animationObserver.createObserver();
-    animationObserver.observeElement();
-  }, 2500);
+  setTimeout(
+    () => {
+      element && element.classList.add("hidden");
+      this.document.body.style.overflow = "auto";
+      animationObserver.createObserver();
+      animationObserver.observeElement();
+    },
+    element ? 2500 : 200
+  );
 });

@@ -41,6 +41,10 @@
   transform: translate(0, 0);
 }
 
+.follow-container.has_animation.viewfetch {
+  transform: translate(0, -50%);
+}
+
 .typing-effect {
   position: relative;
   color: var(--color);

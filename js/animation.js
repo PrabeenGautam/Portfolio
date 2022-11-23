@@ -24,7 +24,7 @@ const animationObserver = new ObserverCreator(animationRef, animationCallback, {
 
 const element = document.querySelector(".loader");
 window.addEventListener("load", function () {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   setTimeout(
     () => {
       element && element.classList.add("hidden");
@@ -32,6 +32,6 @@ window.addEventListener("load", function () {
       animationObserver.createObserver();
       animationObserver.observeElement();
     },
-    element ? 2400 : 200
+    element ? 2400 : 0
   );
 });

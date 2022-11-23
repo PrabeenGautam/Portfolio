@@ -23,7 +23,7 @@
 }
 
 .has_animation {
-  transition: opacity 300ms linear, transform 500ms ease-in-out;
+  transition: opacity 500ms linear, transform 500ms ease-in-out;
 }
 
 .project-item.has_animation {

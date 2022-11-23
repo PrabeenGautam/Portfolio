@@ -21,7 +21,7 @@
     <script defer src="./js/library.js"></script>
   </head>
   <body class="light">
-    <div class="loader">
+    <!-- <div class="loader hidden">
       <div class="wrapper">
         <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <title>Loader Logo</title>
@@ -49,7 +49,7 @@
           </g>
         </svg>
       </div>
-    </div>
+    </div> -->
     <div class="customIcons scroll-up">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +67,49 @@
       </svg>
     </div>
 
+    <nav id="side-navbar" class="side-navbar">
+      <ul class="nav-menu">
+        <div class="status-container">
+          <div class="status-bar"></div>
+          <div class="status-fill"></div>
+        </div>
+
+        <li>
+          <a data-scroll="about" href="#about">
+            <div class="dot"></div>
+            <div class="dot-about">About</div></a
+          >
+        </li>
+        <li>
+          <a data-scroll="skills" href="#skills">
+            <div class="dot"></div>
+            <div class="dot-about">Skills</div></a
+          >
+        </li>
+        <li>
+          <a data-scroll="featured" href="#featured">
+            <div class="dot"></div>
+            <div class="dot-about">Featured</div>
+          </a>
+        </li>
+        <li>
+          <a data-scroll="projects" href="#projects">
+            <div class="dot"></div>
+            <div class="dot-about">Works</div>
+          </a>
+        </li>
+        <li>
+          <a data-scroll="contact" href="#contact">
+            <div class="dot"></div>
+            <div class="dot-about">Contact</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <div class="customIcons theme-switcher" title="Light Theme"></div>
 
-    <header class="header">
+    <header class="header section-ref" id="home">
       <nav class="nav-container">
         <div class="logo">
           <a href="index.html"><span>Prabin</span><span>Gautam</span></a>
@@ -180,7 +220,9 @@
     </header>
 
     <main>
-      <section id="about" class="section-counter has_animation fadeInUp">
+      <section
+        id="about"
+        class="section-ref section-counter has_animation fadeInUp">
         <div class="heading">
           <div class="header-title">About Me</div>
           <div class="line"></div>
@@ -212,7 +254,9 @@
         </div>
       </section>
 
-      <section id="skills" class="section-counter has_animation fadeInUp">
+      <section
+        id="skills"
+        class="section-ref section-counter has_animation fadeInUp">
         <div class="skills-section">
           <div class="heading">
             <div class="header-title">Skills and Experience</div>
@@ -327,7 +371,7 @@
         </div>
       </section>
 
-      <section id="featured" class="section-counter">
+      <section id="featured" class="section-ref section-counter">
         <div class="heading">
           <div class="header-title">Some Things I’ve Built</div>
           <div class="line"></div>
@@ -335,7 +379,9 @@
         <div class="content-section project-featured"></div>
       </section>
 
-      <section id="projects" class="section-counter has_animation fadeInUp">
+      <section
+        id="projects"
+        class="section-ref section-counter has_animation fadeInUp">
         <div class="heading space">
           <div class="header-title">Projects</div>
           <div class="filter-group filters-button-group">
@@ -354,7 +400,9 @@
         </div>
       </section>
 
-      <section id="contact" class="section-counter has_animation fadeInUp">
+      <section
+        id="contact"
+        class="section-ref section-counter has_animation fadeInUp">
         <div class="content-section">
           <div class="heading">
             <div class="header-title">What's Next?</div>
@@ -368,14 +416,14 @@
             new challenge. If you want to get in touch, please do so!
           </div>
           <div class="btn btn-more">
-            <a href="mailto: prabeen122@gmail.com">Say Hello</a>
+            <a href="mailto: prabeen122@gmail.com">Contact Me</a>
           </div>
         </div>
-      </section>
 
-      <div class="built">
-        Built By <span class="highlight">Prabin Gautam</span>
-      </div>
+        <div class="built">
+          Built By <span class="highlight">Prabin Gautam</span>
+        </div>
+      </section>
     </main>
   </body>
 

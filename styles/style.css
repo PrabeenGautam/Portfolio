@@ -40,9 +40,13 @@ body {
 
 body {
   max-width: 1600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   overflow: hidden;
   transition: background 500ms ease-in-out, color 500ms ease-in-out;
+}
+
+ul {
+  list-style: none;
 }
 
 ::-webkit-scrollbar {
@@ -141,7 +145,6 @@ img {
 
 .nav-container .nav_links {
   display: flex;
-  list-style-type: none;
 }
 
 .nav_items {
@@ -342,8 +345,13 @@ main {
 
 .section-counter {
   counter-increment: sections;
-  margin-top: 4rem;
+  padding-top: 4rem;
   width: 100%;
+}
+
+.section-counter#contact {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .section-counter .heading {
@@ -598,100 +606,104 @@ main {
   background-color: var(--color);
 }
 
-.side-nav {
+.side-navbar {
   position: fixed;
-  top: calc(50% - 14rem);
-  transform: translateX(-7rem);
-  left: 15px;
-  background-color: var(--btnColor);
-  color: var(--stateColor);
-  border-radius: 8px;
-  height: 28rem;
+  top: 50%;
+  transform: translate(-7rem, -50%);
+  left: 3rem;
   z-index: 20;
-  transition: transform 500ms ease-in;
+  transition: 500ms ease-in;
 }
 
-.side-nav.show {
-  transform: translate(0);
+.side-navbar.show {
+  transform: translate(0, -50%);
 }
 
-.side-nav ul {
+.status-container {
+  position: absolute;
+  height: 100%;
+}
+
+.status-bar,
+.status-fill {
+  width: 5.5px;
+  position: absolute;
+  transform: translate(-50%);
+  border-radius: 8px;
+}
+
+.status-bar {
+  height: 100%;
+  border: 2px solid var(--btnColor);
+  background-color: var(--btnColor);
+}
+
+.status-fill {
+  height: 0;
+  background-color: var(--btnColor);
+}
+
+.side-navbar .nav-menu li {
   position: relative;
-  list-style: none;
-
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 1rem 0;
-}
-
-.side-nav li {
+  height: 60px;
   display: flex;
   align-items: center;
-  cursor: pointer;
-  position: relative;
-  padding: 20px;
 }
 
-.light .side-nav li.active {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.dark .side-nav li.active {
-  background-color: var(--color);
-}
-
-.side-nav li.active::before {
+.side-navbar .dot::after {
   content: "";
-  width: 20px;
-  height: 100%;
-  background-color: var(--bg);
+  border-radius: 50%;
+  border: 2px solid var(--btnColor);
   position: absolute;
   left: 0;
-  border-radius: 10px;
-  transform: translateX(-50%);
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 50% 0%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--stateColor);
 }
 
-.side-nav li.active::after {
-  content: "";
+.side-navbar .dot::after {
+  width: 10px;
+  height: 10px;
+  transition: all 300ms ease-in;
+}
+
+.side-navbar li.active .dot::after,
+.side-navbar li:hover .dot::after {
   width: 20px;
-  height: 100%;
-  background-color: var(--bg);
-  position: absolute;
-  right: 0;
-  border-radius: 10px;
-  transform: translateX(50%);
-  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%, 0% 0%);
-}
-
-.side-nav .nav-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.side-nav .nav-icons svg {
-  width: 30px;
-  height: 30px;
-}
-
-.side-nav .nav-name {
-  position: absolute;
-  color: var(--stateColor);
-  font-weight: bold;
+  height: 20px;
   background-color: var(--btnColor);
-  padding: 15px;
-  border-radius: 5px;
-
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  transform: translateX(2.5rem);
-  transition: opacity 500ms ease-in-out;
 }
 
-.side-nav li:hover .nav-name {
+.side-navbar .dot-about {
+  background-color: var(--btnColor);
+}
+
+.side-navbar .dot-about {
+  font-size: 0.875rem;
+  height: 40px;
+  padding: 5px 10px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  color: var(--stateColor);
+  border-radius: 8px;
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
+
+.side-navbar .nav-menu li .dot-about::before {
+  content: "";
+  position: absolute;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--btnColor);
+  top: 50%;
+  transform: translate(-18px, -50%);
+}
+
+.side-navbar .nav-menu li:hover .dot-about,
+.side-navbar .nav-menu li.active .dot-about:not(.sHome) {
+  margin-left: 25px;
   opacity: 1;
 }
 
@@ -870,7 +882,7 @@ main {
   background-color: var(--bg_gray);
   color: var(--color);
   transform-origin: 100% 50%;
-  width: 120%;
+  width: calc(100% + 5rem);
   z-index: 20;
 }
 
@@ -912,7 +924,7 @@ main {
   max-width: 40rem;
   margin: 0 auto;
   height: 100vh;
-  padding: 150px 0;
+  position: relative;
 }
 
 #contact .heading {
@@ -949,5 +961,8 @@ main {
 }
 
 .built {
-  text-align: center;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translate(-50%);
 }

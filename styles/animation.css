@@ -4,18 +4,34 @@
 
 .fadeInDown {
   transform: translate(-0.5rem, -2rem);
+  -ms-transform: translate(-0.5rem, -2rem);
+  -moz-transform: translate(-0.5rem, -2rem);
+  -o-transform: translate(-0.5rem, -2rem);
+  -webkit-transform: translate(-0.5rem, -2rem);
 }
 
 .fadeInUp {
   transform: translateY(3rem);
+  -ms-transform: translateY(3rem);
+  -moz-transform: translateY(3rem);
+  -o-transform: translateY(3rem);
+  -webkit-transform: translateY(3rem);
 }
 
 .fadeInLeft {
   transform: translateX(1rem);
+  -ms-transform: translateX(1rem);
+  -moz-transform: translateX(1rem);
+  -o-transform: translateX(1rem);
+  -webkit-transform: translateX(1rem);
 }
 
 .fadeInRight {
   transform: translateX(-1rem);
+  -ms-transform: translateX(-1rem);
+  -moz-transform: translateX(-1rem);
+  -o-transform: translateX(-1rem);
+  -webkit-transform: translateX(-1rem);
 }
 
 .fadeOpacity {
@@ -24,10 +40,16 @@
 
 .has_animation {
   transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -webkit-transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -moz-transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -o-transition: opacity 500ms linear, transform 300ms ease-in-out;
 }
 
 .project-item.has_animation {
   transition: opacity 500ms linear;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -o-transition: opacity 500ms linear;
 }
 
 .prefetch {

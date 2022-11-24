@@ -304,8 +304,13 @@
     animation-play-state: running;
   }
 
+  .content-section .images {
+    box-shadow: none;
+  }
+
   .content-section .images:hover {
     transform: none;
+    box-shadow: none;
   }
 }
 

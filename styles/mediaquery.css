@@ -198,8 +198,25 @@
     width: 100%;
   }
 
-  .nav-container:not(.sticky) {
+  .nav-container {
+    padding-left: 1rem;
+  }
+
+  .nav-container:not(.sticky) .nav_links {
     display: none;
+  }
+
+  .header,
+  .header-details {
+    background: none;
+  }
+
+  .header-details {
+    height: calc(100% + 10rem);
+  }
+
+  .nav-container .logo {
+    font-size: 1.5rem;
   }
 
   .theme-switcher:not(.sticker) {
@@ -236,6 +253,10 @@
 @media screen and (max-width: 600px) {
   .section-counter {
     padding-top: 2rem;
+  }
+
+  .header-details {
+    display: block;
   }
 
   .project-item {
@@ -278,15 +299,6 @@
     font-size: 1.2rem;
     margin-top: 20px;
     gap: 0;
-  }
-
-  .header-details {
-    display: block;
-  }
-
-  .header {
-    height: calc(100% + 10rem);
-    background: none;
   }
 
   .image-container {

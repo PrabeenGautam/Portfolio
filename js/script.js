@@ -3,7 +3,7 @@ const tabsButton = document.querySelectorAll(".tabs");
 const tabsContent = document.querySelectorAll(".tab-content");
 const scrollUp = document.querySelector(".scroll-up");
 const themeSwitcher = document.querySelector(".theme-switcher");
-const headerSections = document.querySelector(".header");
+const headerSections = document.querySelector(".header-details");
 const projectItems = document.querySelectorAll(".project-item");
 
 const navContainer = document.querySelector(".nav_links");
@@ -123,6 +123,12 @@ sideNavContainer &&
 sectionCounter &&
   window.addEventListener("scroll", function (e) {
     checkSideActivation(e);
+    this.document
+      .querySelector(".header")
+      .classList.toggle(
+        "sticky",
+        window.matchMedia("(max-width: 600px)") && this.window.scrollY > 20
+      );
   });
 
 function checkSideActivation(e) {

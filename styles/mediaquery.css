@@ -57,6 +57,11 @@
     justify-content: space-evenly;
   }
 
+  .typing-effect {
+    width: 100%;
+    animation-play-state: paused;
+  }
+
   .side-navbar {
     display: none;
   }
@@ -87,10 +92,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .header {
-    height: 100%;
-  }
-
   .nav-container .logo {
     font-size: 1.2rem;
   }
@@ -102,6 +103,21 @@
   .full-details .background-text {
     font-size: 10rem;
     left: 2%;
+    top: 4%;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+
+  .nav-btn.btn-more {
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .full-details {
+    margin-left: 3rem;
   }
 
   .image-container {
@@ -129,13 +145,11 @@
   #contact .built {
     display: none;
   }
+}
 
-  .fadeInLeft {
-    transform: translateX(5rem);
-  }
-
-  .fadeInRight {
-    transform: translateX(-5rem);
+@media screen and (max-width: 850px) {
+  .nav-container .nav_link::before {
+    display: none;
   }
 }
 
@@ -155,6 +169,19 @@
     gap: 30px;
   }
 
+  .full-details {
+    margin-left: 1rem;
+  }
+
+  #background {
+    width: 230px;
+    height: 280px;
+  }
+
+  .image-container .image {
+    width: 300px;
+  }
+
   .project-featured {
     gap: 0;
   }
@@ -169,6 +196,32 @@
 
   .project-container .project-description {
     width: 100%;
+  }
+
+  .nav-container:not(.sticky) {
+    display: none;
+  }
+
+  .theme-switcher:not(.sticker) {
+    top: 20px;
+    left: auto;
+    right: 20px;
+  }
+
+  #details .name {
+    font-size: 1.5rem;
+  }
+
+  .bar-h {
+    height: 4px;
+  }
+
+  #details .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .full-details .background-text {
+    font-size: 8rem;
   }
 }
 
@@ -218,11 +271,39 @@
     margin-top: 20px;
     gap: 0;
   }
+
+  .header-details {
+    display: block;
+  }
+
+  .header {
+    height: calc(100% + 10rem);
+    background: none;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .full-details .background-text {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  .typing-effect {
+    width: 0;
+    animation-play-state: running;
+  }
 }
 
 @media screen and (max-width: 400px) {
   #skills .skill-list {
     grid-template-columns: repeat(2, 1fr);
     justify-content: start;
+  }
+
+  .full-details .background-text {
+    font-size: 6rem;
   }
 }

@@ -11,11 +11,11 @@
 }
 
 .fadeInLeft {
-  transform: translateX(10rem);
+  transform: translateX(1rem);
 }
 
 .fadeInRight {
-  transform: translateX(-10rem);
+  transform: translateX(-1rem);
 }
 
 .fadeOpacity {
@@ -23,7 +23,7 @@
 }
 
 .has_animation {
-  transition: opacity 500ms linear, transform 500ms ease-in-out;
+  transition: opacity 500ms linear, transform 300ms ease-in-out;
 }
 
 .project-item.has_animation {

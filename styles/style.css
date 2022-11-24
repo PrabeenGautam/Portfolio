@@ -994,3 +994,63 @@ main {
 .footer-follow .icon {
   margin: 0;
 }
+
+.footer-nav-menu {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+
+  width: 95%;
+  border-radius: 9px;
+  display: flex;
+  height: 4rem;
+  gap: 20px;
+  padding: 0 20px;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 5px black;
+
+  display: none;
+  backdrop-filter: blur(2px);
+}
+
+.footer-nav-menu li {
+  flex: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-nav-menu li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.footer-nav-menu .footer-icon,
+.footer-nav-menu .dot-about {
+  transition: 300ms ease-in-out;
+}
+
+.footer-nav-menu .footer-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.footer-nav-menu .dot-about {
+  position: absolute;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.footer-nav-menu li:hover .dot-about,
+.footer-nav-menu li .footer-icon {
+  opacity: 0;
+}
+
+.footer-nav-menu li:hover .footer-icon {
+  opacity: 1;
+  color: #0f0;
+}

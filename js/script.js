@@ -20,6 +20,10 @@ navContainer.addEventListener("click", function (e) {
   const element = e.target.closest(".nav_items");
   if (!element) return;
   const href = element.querySelector("a").getAttribute("href");
+  if (href === "index.html") {
+    window.location = "index.html";
+    return;
+  }
   const section = document.querySelector(href);
   section.scrollIntoView({ behavior: "smooth" });
 });

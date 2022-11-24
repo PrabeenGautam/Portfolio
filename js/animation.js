@@ -25,13 +25,10 @@ const animationObserver = new ObserverCreator(animationRef, animationCallback, {
 const element = document.querySelector(".loader");
 window.addEventListener("load", function () {
   window.scrollTo(0, 0);
-  setTimeout(
-    () => {
-      element && element.classList.add("hidden");
-      this.document.body.style.overflow = "auto";
-      animationObserver.createObserver();
-      animationObserver.observeElement();
-    },
-    element ? 2400 : 0
-  );
+  setTimeout(() => {
+    this.document.body.style.overflow = "auto";
+    animationObserver.createObserver();
+    animationObserver.observeElement();
+    element && element.classList.add("hidden");
+  }, 2400);
 });

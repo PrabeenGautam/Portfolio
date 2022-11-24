@@ -123,11 +123,13 @@ sideNavContainer &&
 sectionCounter &&
   window.addEventListener("scroll", function (e) {
     checkSideActivation(e);
+
     this.document
       .querySelector(".header")
       .classList.toggle(
         "sticky",
-        window.matchMedia("(max-width: 600px)") && this.window.scrollY > 20
+        window.matchMedia("(max-width: 600px)").matches &&
+          this.window.scrollY > 20
       );
   });
 

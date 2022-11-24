@@ -620,7 +620,7 @@ main {
 .side-navbar {
   position: fixed;
   top: 50%;
-  transform: translate(-7rem, -50%);
+  transform: translate(-9rem, -50%);
   left: 3rem;
   z-index: 20;
   transition: 500ms ease-in;

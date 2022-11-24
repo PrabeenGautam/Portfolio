@@ -30,5 +30,5 @@ window.addEventListener("load", function () {
     animationObserver.createObserver();
     animationObserver.observeElement();
     element && element.classList.add("hidden");
-  }, 2400);
+  }, 2000);
 });

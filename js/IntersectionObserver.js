@@ -1,36 +1,3 @@
-class ObserverCreator {
-  observer;
-  constructor(elements, callbackFunc, options) {
-    this.callbackFunc = callbackFunc;
-    this.options = options;
-    this.elements = elements;
-  }
-
-  createObserver() {
-    this.observer ||
-      (this.observer = new IntersectionObserver(
-        this.callbackFunc,
-        this.options
-      ));
-  }
-
-  observeElement() {
-    this.elements && this.elements.length > 1
-      ? this.elements.forEach((element) => {
-          this.observer.observe(element);
-        })
-      : this.observer.observe(this.elements);
-  }
-
-  unobserveElement() {
-    this.elements && this.elements.length > 1
-      ? this.elements.forEach((element) => {
-          this.observer.unobserve(element);
-        })
-      : this.observer.unobserve(this.elements);
-  }
-}
-
 class SliderCreator {
   currentSlide = 0;
   constructor(element, dotElement) {
@@ -80,22 +47,3 @@ class SliderCreator {
 }
 
 /* Scripts */
-const sliderContainer = document.querySelector(".slider");
-const slides = document.querySelectorAll(".slide");
-const prevBtn = document.querySelector(".previous-btn");
-const nextBtn = document.querySelector(".next-btn");
-const dots = document.querySelector(".dots");
-
-const swiper = new Swiper(".swiper", {
-  spaceBetween: 30,
-  // effect: "fade",
-  loop: true,
-  mousewheel: {
-    invert: false,
-  },
-
-  pagination: {
-    el: ".slide-pagination",
-    clickable: true,
-  },
-});

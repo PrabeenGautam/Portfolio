@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --easeInOutQuart: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
 .light {
   --bg: #e2e8f0;
   --btnColor: #6244c5;
@@ -58,6 +62,191 @@ ul {
 ::-webkit-scrollbar-thumb {
   background-color: var(--secondaryColor);
   border-radius: 5px;
+}
+
+.fadeInDown {
+  transform: translate(-0.5rem, -2rem);
+  -ms-transform: translate(-0.5rem, -2rem);
+  -moz-transform: translate(-0.5rem, -2rem);
+  -o-transform: translate(-0.5rem, -2rem);
+  -webkit-transform: translate(-0.5rem, -2rem);
+}
+
+.fadeInUp {
+  transform: translateY(3rem);
+  -ms-transform: translateY(3rem);
+  -moz-transform: translateY(3rem);
+  -o-transform: translateY(3rem);
+  -webkit-transform: translateY(3rem);
+}
+
+.fadeInLeft {
+  transform: translateX(1rem);
+  -ms-transform: translateX(1rem);
+  -moz-transform: translateX(1rem);
+  -o-transform: translateX(1rem);
+  -webkit-transform: translateX(1rem);
+}
+
+.fadeInRight {
+  transform: translateX(-1rem);
+  -ms-transform: translateX(-1rem);
+  -moz-transform: translateX(-1rem);
+  -o-transform: translateX(-1rem);
+  -webkit-transform: translateX(-1rem);
+}
+
+.fadeOpacity {
+  opacity: 0;
+}
+
+.has_animation {
+  transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -webkit-transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -moz-transition: opacity 500ms linear, transform 300ms ease-in-out;
+  -o-transition: opacity 500ms linear, transform 300ms ease-in-out;
+}
+
+.project-item.has_animation {
+  transition: opacity 500ms linear;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -o-transition: opacity 500ms linear;
+}
+
+.prefetch {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.has_animation.viewfetch {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+}
+
+.follow-container.has_animation.viewfetch {
+  transform: translate(0, -50%);
+}
+
+.typing-effect {
+  position: relative;
+  color: var(--color);
+  width: 0;
+  white-space: nowrap;
+  animation: typing 4s steps(26) 2400ms forwards, cursor 1s infinite 2400ms;
+  overflow: hidden;
+  border-right: 3px solid transparent;
+}
+
+.wrapper {
+  width: 110px;
+  height: 110px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 1;
+}
+
+.wrapper svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.wrapper #logo path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1500ms var(--easeInOutQuart) 0.3s forwards;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wrapper #logo #logo_name {
+  opacity: 0;
+  animation: opacity 700ms var(--easeInOutQuart) 1500ms;
+}
+
+.wrapper #logo {
+  animation: close 300ms var(--easeInOutQuart) 2.3s forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  to {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+}
+
+@keyframes typing {
+  to {
+    width: 30ch;
+  }
+}
+
+@keyframes cursor {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--btnColor);
+  }
+}
+
+.facebook {
+  background-color: #3a568f;
+}
+
+.instagram {
+  background: radial-gradient(
+      circle farthest-corner at 35% 90%,
+      #fec564,
+      transparent 50%
+    ),
+    radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+    radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 20% -50%,
+      #5258cf,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+    radial-gradient(
+      ellipse farthest-corner at 60% -20%,
+      #893dc2,
+      transparent 50%
+    ),
+    radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+    linear-gradient(
+      #6559ca,
+      #bc318f 30%,
+      #e33f5f 50%,
+      #f77638 70%,
+      #fec66d 100%
+    );
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.youtube {
+  background-color: #ff0000;
 }
 
 img {

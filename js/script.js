@@ -1,19 +1,91 @@
+const dots = document.querySelector(".dots");
+const animationRef = document.querySelectorAll(".has_animation");
+const headerSections = document.querySelector(".header-details");
+const navContainer = document.querySelector(".nav_links");
+const sideNavContainer = document.querySelector(".nav-menu");
+const sideNavLinks = document.querySelectorAll(".nav-menu li");
 const toggleButtons = document.querySelector(".toggle-buttons");
 const tabsButton = document.querySelectorAll(".tabs");
 const tabsContent = document.querySelectorAll(".tab-content");
 const scrollUp = document.querySelector(".scroll-up");
 const themeSwitcher = document.querySelector(".theme-switcher");
-const headerSections = document.querySelector(".header-details");
 const projectItems = document.querySelectorAll(".project-item");
-
-const navContainer = document.querySelector(".nav_links");
-
+const navItems = document.querySelectorAll(".navitems");
 const sectionCounter = document.querySelectorAll(".section-ref");
-const sideNavLinks = document.querySelectorAll(".nav-menu li");
-const sideNavContainer = document.querySelector(".nav-menu");
-
 const statusContainer = document.querySelector(".status-container");
 const statusFill = document.querySelector(".status-fill");
+const sliderContainer = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".previous-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+class ObserverCreator {
+  observer;
+  constructor(elements, callbackFunc, options) {
+    this.callbackFunc = callbackFunc;
+    this.options = options;
+    this.elements = elements;
+  }
+
+  createObserver() {
+    this.observer ||
+      (this.observer = new IntersectionObserver(
+        this.callbackFunc,
+        this.options
+      ));
+  }
+
+  observeElement() {
+    this.elements && this.elements.length > 1
+      ? this.elements.forEach((element) => {
+          this.observer.observe(element);
+        })
+      : this.observer.observe(this.elements);
+  }
+
+  unobserveElement() {
+    this.elements && this.elements.length > 1
+      ? this.elements.forEach((element) => {
+          this.observer.unobserve(element);
+        })
+      : this.observer.unobserve(this.elements);
+  }
+}
+
+animationRef.forEach((element) => {
+  element.classList.add("prefetch");
+  element.dataset.delay &&
+    (element.style.transitionDelay = element.dataset.delay + "s");
+});
+
+const animationCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("viewfetch");
+      entry.target.matches(".prefetch") &&
+        entry.target.classList.remove("prefetch");
+    }
+  });
+};
+
+const animationObserver = new ObserverCreator(animationRef, animationCallback, {
+  threshold: 0.1,
+  root: null,
+});
+
+const element = document.querySelector(".loader");
+window.addEventListener("load", function () {
+  window.scrollTo(0, 0);
+  setTimeout(
+    () => {
+      this.document.body.style.overflow = "auto";
+      animationObserver.createObserver();
+      animationObserver.observeElement();
+      element && element.classList.add("hidden");
+    },
+    element ? 2200 : 0
+  );
+});
 
 navContainer.addEventListener("click", function (e) {
   e.preventDefault();
@@ -158,3 +230,55 @@ function checkSideActivation(e) {
     }
   });
 }
+
+var iso = new Isotope(".grid", {
+  itemSelector: ".project-item",
+  percentPosition: true,
+  masonry: {
+    columnWidth: ".project-item",
+  },
+});
+
+// filter functions
+var filterFns = {
+  // show if name ends with -ium
+  ium: function (itemElem) {
+    var name = itemElem.querySelector(".name").textContent;
+    return name.match(/ium$/);
+  },
+};
+
+// bind filter button click
+var filtersElem = document.querySelector(".filters-button-group");
+filtersElem.addEventListener("click", function (event) {
+  if (!matchesSelector(event.target, ".filter-list")) return;
+  var filterValue = event.target.getAttribute("data-filter");
+  filterValue = filterFns[filterValue] || filterValue;
+  iso.arrange({ filter: filterValue });
+});
+
+// change active class on list
+var filterGroups = document.querySelector(".filter-group");
+radioButtonGroup(filterGroups);
+
+function radioButtonGroup(filterGroup) {
+  filterGroup.addEventListener("click", function (event) {
+    if (!matchesSelector(event.target, ".filter-list")) return;
+    filterGroup.querySelector(".active").classList.remove("active");
+    event.target.classList.add("active");
+  });
+}
+
+const swiper = new Swiper(".swiper", {
+  spaceBetween: 30,
+  // effect: "fade",
+  loop: true,
+  mousewheel: {
+    invert: false,
+  },
+
+  pagination: {
+    el: ".slide-pagination",
+    clickable: true,
+  },
+});

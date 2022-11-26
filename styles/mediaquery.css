@@ -206,9 +206,9 @@
   }
 
   .theme-switcher:not(.sticker) {
-    top: 20px;
+    top: 10px;
     left: auto;
-    right: 20px;
+    right: 10px;
   }
 
   .scroll-up:not(.sticker) {
@@ -264,7 +264,7 @@
 
   .header {
     position: sticky !important;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     z-index: 999;

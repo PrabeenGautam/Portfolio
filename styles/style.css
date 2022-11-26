@@ -64,6 +64,8 @@ ul {
   border-radius: 5px;
 }
 
+/* Animation Containers Start  */
+
 .fadeInDown {
   transform: translate(-0.5rem, -2rem);
   -ms-transform: translate(-0.5rem, -2rem);
@@ -208,6 +210,10 @@ ul {
   }
 }
 
+/* Animation Containers End  */
+
+/* Icon Containers Start  */
+
 .facebook {
   background-color: #3a568f;
 }
@@ -249,11 +255,13 @@ ul {
   background-color: #ff0000;
 }
 
+/* Icon Containers Start  */
+
 img {
   display: block;
   width: 100%;
-  /* pointer-events: none;
-  user-select: none; */
+  pointer-events: none;
+  user-select: none;
   border-radius: inherit;
 }
 

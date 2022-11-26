@@ -59,7 +59,6 @@
 
   .typing-effect {
     width: 30ch;
-    animation-play-state: paused;
   }
 
   .side-navbar {
@@ -213,11 +212,6 @@
     display: none;
   }
 
-  .header,
-  .header-details {
-    background: none;
-  }
-
   .header-details {
     height: calc(100% + 10rem);
   }
@@ -262,6 +256,11 @@
   .header-details {
     display: block;
     padding-top: 3rem;
+  }
+
+  .header,
+  .header-details {
+    background: none;
   }
 }
 

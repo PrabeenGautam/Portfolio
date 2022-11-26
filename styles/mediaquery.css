@@ -177,6 +177,10 @@
     gap: 0;
   }
 
+  .project-container {
+    display: flex;
+  }
+
   .project-container:nth-child(odd) {
     flex-direction: column;
   }

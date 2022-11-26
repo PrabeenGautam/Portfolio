@@ -120,17 +120,22 @@ sideNavContainer &&
     section.scrollIntoView({ behavior: "smooth" });
   });
 
+let oldScrollValue = 0;
 sectionCounter &&
   window.addEventListener("scroll", function (e) {
-    checkSideActivation(e);
+    const newValue = this.window.scrollY;
 
+    checkSideActivation(e);
     this.document
       .querySelector(".header")
       .classList.toggle(
         "sticky",
         window.matchMedia("(max-width: 600px)").matches &&
+          oldScrollValue > newValue &&
           this.window.scrollY > 20
       );
+
+    oldScrollValue = newValue;
   });
 
 function checkSideActivation(e) {

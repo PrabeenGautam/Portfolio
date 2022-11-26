@@ -414,10 +414,6 @@ main {
   filter: grayscale(1);
 }
 
-.light .content-section .images {
-  filter: grayscale(1);
-}
-
 .content-section .images img {
   border-radius: 8px;
 }

@@ -151,6 +151,13 @@
   .nav-container .nav_link::before {
     display: none;
   }
+
+  .full-details .background-text {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 8rem;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -215,10 +222,6 @@
     height: calc(100% + 10rem);
   }
 
-  .nav-container .logo {
-    font-size: 1.5rem;
-  }
-
   .theme-switcher:not(.sticker) {
     top: 20px;
     left: auto;
@@ -241,12 +244,24 @@
     font-size: 1.2rem;
   }
 
-  .full-details .background-text {
-    font-size: 8rem;
-  }
-
   .footer-nav-menu {
     display: flex;
+  }
+
+  .full-details .background-text {
+    font-size: 6rem;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .image-container {
+    display: none;
+  }
+
+  .header-details {
+    display: block;
+    padding-top: 3rem;
   }
 }
 
@@ -255,8 +270,17 @@
     padding-top: 2rem;
   }
 
-  .header-details {
-    display: block;
+  .light .header {
+    background-color: #d6dce4;
+  }
+
+  .header {
+    position: sticky !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    height: 4rem;
   }
 
   .project-item {
@@ -301,17 +325,6 @@
     gap: 0;
   }
 
-  .image-container {
-    display: none;
-  }
-
-  .full-details .background-text {
-    position: relative;
-    left: 0;
-    top: 0;
-    font-size: 6rem;
-  }
-
   .typing-effect {
     width: 0;
     animation-play-state: running;
@@ -331,6 +344,14 @@
   #skills .skill-list {
     grid-template-columns: repeat(2, 1fr);
     justify-content: start;
+  }
+
+  .footer-follow {
+    margin-top: 1.2rem;
+  }
+
+  .footer-nav-menu {
+    font-size: 0.875rem;
   }
 
   .full-details .background-text {

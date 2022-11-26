@@ -126,16 +126,20 @@ sectionCounter &&
     const newValue = this.window.scrollY;
 
     checkSideActivation(e);
-    this.document
-      .querySelector(".header")
-      .classList.toggle(
-        "sticky",
-        window.matchMedia("(max-width: 600px)").matches &&
-          oldScrollValue > newValue &&
-          this.window.scrollY > 20
-      );
+    const headerSections = this.document.querySelector(".header");
 
-    oldScrollValue = newValue;
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      //Scroll Down
+      if (oldScrollValue < newValue) {
+        headerSections.style.top = "-5rem";
+      }
+
+      //Scroll Up
+      if (oldScrollValue > newValue && this.window.scrollY > 50) {
+        headerSections.style.top = 0;
+      }
+      oldScrollValue = newValue;
+    }
   });
 
 function checkSideActivation(e) {

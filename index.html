@@ -68,11 +68,17 @@
     <link rel="stylesheet" href="./dist/swiper/swiper-bundle.min.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/fonts/font-style.min.css" />
+    <!-- <link rel="stylesheet" href="./assets/fonts/font-style.min.css" />
     <link rel="stylesheet" href="./min/animation.min.css" />
     <link rel="stylesheet" href="./min/style.min.css" />
     <link rel="stylesheet" href="./min/mediaquery.min.css" />
-    <link rel="stylesheet" href="./min/icon.min.css" />
+    <link rel="stylesheet" href="./min/icon.min.css" /> -->
+
+    <link rel="stylesheet" href="./assets/fonts/font-style.css" />
+    <link rel="stylesheet" href="./styles/animation.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/mediaquery.css" />
+    <link rel="stylesheet" href="./styles/icon.css" />
 
     <!-- Custom JS  -->
     <script defer src="./js/min/IntersectionObserver.min.js"></script>
@@ -218,10 +224,16 @@
       <div class="image-container has_animation fadeInUp" data-delay="0.1">
         <div id="background"></div>
         <div class="image">
-          <img
-            src="./assets/images/full-show.png"
-            alt="prabin"
-            class="featured-photo" />
+          <picture>
+            <source srcset="./assets/images/full-show.webp" type="image/webp" />
+            <source
+              srcset="./assets/images/full-show-min.png"
+              type="image/jpeg" />
+            <img
+              src="./assets/images/full-show.png"
+              alt="profile picture"
+              class="featured-photo" />
+          </picture>
         </div>
       </div>
     </section>
@@ -291,7 +303,11 @@
         </div>
         <div class="content-section">
           <div class="images">
-            <img src="./assets/images/front.jpg" alt="profile picture" />
+            <picture>
+              <source srcset="./assets/images/front.webp" type="image/webp" />
+              <source srcset="./assets/images/front.jpg" type="image/jpeg" />
+              <img src="./assets/images/front.jpg" alt="profile picture" />
+            </picture>
           </div>
           <div class="content">
             <p>

@@ -63,8 +63,8 @@ ul {
 img {
   display: block;
   width: 100%;
-  pointer-events: none;
-  user-select: none;
+  /* pointer-events: none;
+  user-select: none; */
   border-radius: inherit;
 }
 
@@ -206,7 +206,7 @@ a {
   height: 100%;
   overflow: hidden;
   object-fit: cover;
-  background: url("../assets/images/background.png") repeat-x;
+  background: url("../assets/images/background.webp") repeat-x;
   position: relative;
 }
 
@@ -281,8 +281,6 @@ a {
 
 .image-container .featured-photo {
   object-position: top;
-  pointer-events: none;
-  user-select: none;
   filter: grayscale(1);
 }
 

@@ -13,6 +13,7 @@ const projectArray = [
     technologies: ["HTML", "CSS", "JavaScript", "JSX", "React"],
     featuredProjects: true,
     cover: "./assets/images/project/cms.png",
+    webp: "./assets/images/project/cms.webp",
   },
   {
     filter: "html-css js",
@@ -67,6 +68,7 @@ const projectArray = [
     technologies: ["HTML", "CSS", "JavaScript"],
     featuredProjects: true,
     cover: "./assets/images/project/password-generator.png",
+    webp: "./assets/images/project/password-generator.webp",
   },
   {
     filter: "html-css js",
@@ -237,13 +239,26 @@ projectFeatured &&
       even ? "fadeInLeft" : "fadeInRight"
     }">
             <div class="project-image">
-              <img
+             <picture>
+            <source srcset=${
+              project.webp ? project.webp : "./assets/images/placeholder.webp"
+            } type="image/webp" />
+            <source
+              srcset=${
+                project.cover
+                  ? project.cover
+                  : "./assets/images/placeholder.jpg"
+              }
+              type="image/jpeg" />
+            <img
                 src=${
                   project.cover
                     ? project.cover
                     : "./assets/images/placeholder.jpg"
                 }
                 alt=${project.title} />
+          </picture>
+              
             </div>
 
             <div class="project-details">

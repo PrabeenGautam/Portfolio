@@ -35,3 +35,13 @@ function radioButtonGroup(filterGroup) {
     event.target.classList.add("active");
   });
 }
+
+Modernizr.on("webp", function (result) {
+  if (result) {
+    document.querySelector(".header-details").classList.remove("no-webp");
+    document.querySelector(".header-details").classList.add("webp");
+  } else {
+    document.querySelector(".header-details").classList.remove("webp");
+    document.querySelector(".header-details").classList.add("no-webp");
+  }
+});

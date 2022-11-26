@@ -206,7 +206,7 @@ a {
   height: 100%;
   overflow: hidden;
   object-fit: cover;
-  background: url("../assets/images/background.webp") repeat-x;
+  background: url("../assets/images/background.png") repeat-x;
   position: relative;
 }
 

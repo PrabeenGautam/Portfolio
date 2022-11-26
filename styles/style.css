@@ -166,11 +166,8 @@ ul {
 
 .wrapper #logo #logo_name {
   opacity: 0;
-  animation: opacity 700ms var(--easeInOutQuart) 1500ms;
-}
-
-.wrapper #logo {
-  animation: close 300ms var(--easeInOutQuart) 2.3s forwards;
+  animation: opacity 700ms var(--easeInOutQuart) 1500ms forwards,
+    huerotate infinite var(--easeInOutQuart) 1500ms;
 }
 
 @keyframes dash {
@@ -185,10 +182,13 @@ ul {
   }
 }
 
-@keyframes close {
-  to {
-    opacity: 0;
-    transform: scale(0.1);
+@keyframes huerotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
   }
 }
 

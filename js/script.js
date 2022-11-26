@@ -83,7 +83,7 @@ window.addEventListener("load", function () {
       animationObserver.observeElement();
       element && element.classList.add("hidden");
     },
-    element ? 2200 : 0
+    element ? 3500 : 0
   );
 });
 

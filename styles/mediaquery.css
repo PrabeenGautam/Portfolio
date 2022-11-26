@@ -38,13 +38,11 @@
     box-shadow: 0.75rem 0.75rem 2px var(--btnColor);
   }
 
-  .project-container .project-image,
-  .project-container:nth-child(even) .project-image {
-    border: none;
-  }
-
-  .project-container .project-image img {
-    object-fit: contain;
+  .full-details .background-text {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 7rem;
   }
 }
 
@@ -99,12 +97,6 @@
     font-size: 0.85rem;
   }
 
-  .full-details .background-text {
-    font-size: 10rem;
-    left: 2%;
-    top: 4%;
-  }
-
   .resume {
     display: block;
   }
@@ -149,13 +141,6 @@
 @media screen and (max-width: 850px) {
   .nav-container .nav_link::before {
     display: none;
-  }
-
-  .full-details .background-text {
-    position: relative;
-    left: 0;
-    top: 0;
-    font-size: 8rem;
   }
 }
 

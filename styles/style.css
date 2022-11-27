@@ -273,10 +273,6 @@ img {
   color: var(--btnColor);
   position: fixed;
   z-index: 10000;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hidden {
@@ -325,9 +321,6 @@ img {
   font-size: 1.75rem;
   letter-spacing: 0.01rem;
   font-family: "SFMono", "Fira Sans", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2;
 }
 
@@ -456,8 +449,6 @@ a {
 }
 
 #background {
-  /* width: 450px;
-  height:  450px; */
   width: 70%;
   height: 70%;
   background-color: var(--btnColor);
@@ -466,7 +457,6 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border-top-color: transparent;
 }
 
@@ -527,12 +517,15 @@ a {
   margin-top: 3rem;
 }
 
-.icon {
-  width: 35px;
-  height: 35px;
+.flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -640,23 +633,21 @@ main {
 #skills .skill-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-
   gap: 0px 10px;
-
-  margin-top: 10px;
-  list-style: none;
+  margin: 10px 0 0 15px;
+  list-style-type: "⫸";
 }
 
 #skills .skill-list li {
   margin-top: 10px;
   text-transform: uppercase;
   font-size: 0.875rem;
+  color: var(--btnColor);
+  padding-left: 20px;
 }
 
-#skills .skill-list li:before {
-  content: "⫸";
-  color: var(--btnColor);
-  padding-right: 1rem;
+#skills .skill-list li span {
+  color: var(--color);
 }
 
 #skills .toggle-buttons {
@@ -1024,7 +1015,6 @@ main {
 }
 
 .project-container:nth-child(even) {
-  grid-auto-flow: dense;
   direction: rtl;
 }
 
@@ -1093,10 +1083,13 @@ main {
   text-align: right;
 }
 
+.project-container:nth-child(even) .project-description {
+  text-align: left;
+}
+
 .light .project-container .project-description {
   background-color: #d6dce4;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
-  /* color: #ccd6f6; */
 }
 
 .project-container .links {
@@ -1211,10 +1204,7 @@ main {
 }
 
 .footer-nav-menu li a {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 

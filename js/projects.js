@@ -241,9 +241,8 @@ const featuredProjects = projectArray.filter(
 
 projectFeatured &&
   featuredProjects.forEach((project, index) => {
-    const even = index % 2 === 0;
     const html = ` <div class="project-container has_animation ${
-      even ? "fadeInLeft" : "fadeInRight"
+      index % 2 === 0 ? "fadeInLeft" : "fadeInRight"
     }">
             <div class="project-image">
              <picture>

@@ -227,13 +227,18 @@
     font-size: 1.2rem;
   }
 
-  .footer-nav-menu {
-    display: flex;
+  .footer-menu {
+    display: block;
   }
 
   .full-details .background-text {
     font-size: 6rem;
     opacity: 1;
+  }
+
+  .content-section .content p,
+  #contact .contact-description {
+    font-size: 1rem;
   }
 }
 

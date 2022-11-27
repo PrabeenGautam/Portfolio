@@ -78,12 +78,13 @@ window.addEventListener("load", function () {
   window.scrollTo(0, 0);
   setTimeout(
     () => {
+      element && element.classList.add("hidden");
+      element && element.classList.remove("flexCenter");
       this.document.body.style.overflow = "auto";
       animationObserver.createObserver();
       animationObserver.observeElement();
-      element && element.classList.add("hidden");
     },
-    element ? 3500 : 0
+    element ? 3000 : 0
   );
 });
 

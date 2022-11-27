@@ -10,7 +10,7 @@ const projectArray = [
     title: "Class Management System",
     subtitle:
       "A web app built with React and django as the class management system for any academic institution with the features for administration, teachers and students.",
-    technologies: ["HTML", "CSS", "JavaScript", "JSX", "React"],
+    technologies: ["CSS", "JavaScript", "JSX", "React", "Python", "Django"],
     featuredProjects: true,
     cover: "./assets/images/project/cms.png",
     webp: "./assets/images/project/cms.webp",
@@ -31,7 +31,14 @@ const projectArray = [
     title: "Nepali Music Streaming",
     subtitle:
       "GeetSunam is a Nepali Music Streaming Platform with a focus on genre based music classification and genre based music recommendation.",
-    technologies: ["HTML", "CSS", "JavaScript", "JSX", "React"],
+    technologies: [
+      "CSS",
+      "JavaScript",
+      "JSX",
+      "React",
+      "Python",
+      "Machine Learning",
+    ],
     featuredProjects: true,
   },
   {

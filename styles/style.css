@@ -1180,21 +1180,23 @@ main {
   margin: 0;
 }
 
-.footer-nav-menu {
+.footer-menu {
   position: fixed;
   bottom: 0;
-
   width: 100%;
-  display: flex;
+  backdrop-filter: blur(2px);
   height: 3rem;
-  gap: 20px;
-  padding: 0 20px;
   background-color: var(--btnColor);
   color: var(--stateColor);
   box-shadow: 0 0 5px black;
-
   display: none;
-  backdrop-filter: blur(2px);
+}
+
+.footer-nav-menu {
+  display: flex;
+  height: 100%;
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .footer-nav-menu li {

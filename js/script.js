@@ -1,6 +1,7 @@
 const dots = document.querySelector(".dots");
 const animationRef = document.querySelectorAll(".has_animation");
 const headerSections = document.querySelector(".header-details");
+const headerContainer = this.document.querySelector(".header");
 const navContainer = document.querySelector(".nav_links");
 const sideNavContainer = document.querySelector(".nav-menu");
 const sideNavLinks = document.querySelectorAll(".nav-menu li");
@@ -195,21 +196,18 @@ sideNavContainer &&
 
 let oldScrollValue = 0;
 sectionCounter &&
+  headerContainer &&
   window.addEventListener("scroll", function (e) {
     const newValue = this.window.scrollY;
-
     checkSideActivation(e);
-    const headerSections = this.document.querySelector(".header");
 
     if (window.matchMedia("(max-width: 600px)").matches) {
-      //Scroll Down
       if (oldScrollValue < newValue) {
-        headerSections.style.top = "-5rem";
+        headerContainer.style.top = "-5rem";
       }
 
-      //Scroll Up
       if (oldScrollValue > newValue && this.window.scrollY > 50) {
-        headerSections.style.top = 0;
+        headerContainer.style.top = 0;
       }
       oldScrollValue = newValue;
     }

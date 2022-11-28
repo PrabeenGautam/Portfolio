@@ -1,7 +1,15 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1900px) {
   .wrapper {
     width: 8vw;
     aspect-ratio: 1 / 1;
+  }
+
+  .archive {
+    margin: 0 auto;
+  }
+
+  .project-archive-item {
+    width: calc(25% - 20px);
   }
 }
 

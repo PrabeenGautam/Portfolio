@@ -70,12 +70,11 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/fonts/font-style.min.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/mediaquery.css" />
+    <link rel="stylesheet" href="./styles/style.min.css" />
+    <link rel="stylesheet" href="./styles/mediaquery.min.css" />
 
     <!-- Custom JS  -->
-    <!-- <script defer src="./js/script.min.js"></script> -->
-    <script defer src="./js/script.js"></script>
+    <script defer src="./js/script.min.js"></script>
   </head>
   <body class="light">
     <div class="loader flexCenter">
@@ -107,6 +106,31 @@
         </svg>
       </div>
     </div>
+
+    <header class="header section-ref has_animation" id="home">
+      <nav class="nav-container">
+        <div class="logo">
+          <a href="index.html"><span>Prabin</span><span>Gautam</span></a>
+        </div>
+        <ul class="nav_links">
+          <li class="has_animation nav_items fadeInDown" data-delay="0">
+            <a href="#about" class="nav_link"> About </a>
+          </li>
+          <li class="has_animation nav_items fadeInDown" data-delay="0.1">
+            <a href="#skills" class="nav_link"> Skills </a>
+          </li>
+          <li class="has_animation nav_items fadeInDown" data-delay="0.2">
+            <a href="#featured" class="nav_link"> Projects </a>
+          </li>
+          <li class="has_animation nav_items fadeInDown" data-delay="0.3">
+            <a href="#contact" class="nav_link"> Contact </a>
+          </li>
+          <div class="has_animation btn nav-btn fadeInDown" data-delay="0.4">
+            <a href="./assets/resume.pdf" target="_blank">Resume</a>
+          </div>
+        </ul>
+      </nav>
+    </header>
     <section class="body">
       <div class="customIcons scroll-up">
         <svg
@@ -159,30 +183,7 @@
         </ul>
       </nav>
       <div class="customIcons theme-switcher" title="Light Theme"></div>
-      <header class="header section-ref has_animation" id="home">
-        <nav class="nav-container">
-          <div class="logo">
-            <a href="index.html"><span>Prabin</span><span>Gautam</span></a>
-          </div>
-          <ul class="nav_links">
-            <li class="has_animation nav_items fadeInDown" data-delay="0">
-              <a href="#about" class="nav_link"> About </a>
-            </li>
-            <li class="has_animation nav_items fadeInDown" data-delay="0.1">
-              <a href="#skills" class="nav_link"> Skills </a>
-            </li>
-            <li class="has_animation nav_items fadeInDown" data-delay="0.2">
-              <a href="#featured" class="nav_link"> Projects </a>
-            </li>
-            <li class="has_animation nav_items fadeInDown" data-delay="0.3">
-              <a href="#contact" class="nav_link"> Contact </a>
-            </li>
-            <div class="has_animation btn nav-btn fadeInDown" data-delay="0.4">
-              <a href="./assets/resume.pdf" target="_blank">Resume</a>
-            </div>
-          </ul>
-        </nav>
-      </header>
+
       <section class="header-details">
         <div class="full-details">
           <div class="has_animation fadeInUp fadeOpacity background-text">

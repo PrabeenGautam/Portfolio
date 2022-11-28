@@ -32,19 +32,20 @@
 html,
 body {
   line-height: 1.5;
-  background-color: var(--bg);
   color: var(--color);
   counter-reset: navlinks;
   counter-reset: sections;
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
+  background-color: var(--bg);
 }
 
-body {
-  max-width: 1600px;
+.body {
   margin: 0 auto;
-  overflow: hidden;
+  max-width: 1800px;
   transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  overflow: hidden;
+  position: relative;
 }
 
 ul {
@@ -273,6 +274,7 @@ img {
   color: var(--btnColor);
   position: fixed;
   z-index: 10000;
+  margin: 0;
 }
 
 .hidden {
